@@ -1,43 +1,37 @@
 "use client";
-import React from 'react';
-
+import React from "react";
+import ImagenRegistro from "../../../public/images/logoregister.jpg";
+import "./styles.css";
 export type RegistroProps = {
-	// types...
-}
+  // types...
+};
 
-const Registro: React.FC<RegistroProps>  = ({}) => {
-	return (
-		<div>
- 			<div className="contenedor-registro">
-    <div className="contenedor-registro-imagen">
-        <img src="public/images/logoregister.jpg" alt="Imagen de Registro"
-            className="img-register" />
-    </div>
-    <div className="contenedor-registro-formulario">
-        <h3>Registro</h3>
-          <form action="/create" method="POST" >
-            <label >Nombre</label>
-            <input type="text" id="nombre" name="nombre" />
-         
-            <label>apellido</label>
-            <input type="text" id="apellido" name="apellido" />
-           
-            <label >email</label>
-            <input type="text" id="email" name="email" />
-            
-            <label >carrera</label>
-            <input type="text" id="carrera" name="carrera" />
-
-            <label >edad</label>
-            <input type="number" id="edad" name="edad" />
-         
-            <label>password</label>
-            <input type="password" id="password" name="password" />
-          
-            <button type="submit">Enviar</button>
-        </form>
-<button >click</button>
-    </div>
- 		</div>
+const Registro: React.FC<RegistroProps> = ({}) => {
+  return (
+    <div>
+      <div className="contenedor-registro">
+        <div className="contenedor-registro-imagen">
+          <img
+            src={ImagenRegistro}
+            alt="Imagen de Registro"
+            className="img-register"
+          />
         </div>
-        );}
+        <div className="contenedor-registro-formulario">
+          <h3>Registro</h3>
+          <form>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre"/>
+            <input type="text" id="apellido" name="apellido" placeholder= "Apellido"/>
+            <input type="text" id="email" name="email" placeholder= "Email"/>
+            <input type="password" id="password" name="password" placeholder= "Password"/>
+            <input type="password" id="repassword" name="repassword" placeholder= "Repetir password"/>
+
+            <button type="submit">Enviar</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Registro;
